@@ -6,7 +6,10 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "declaration": false,
+    "declarationMap": false,
+    "composite": false
   },
   "include": [
     "**/*.ts",
