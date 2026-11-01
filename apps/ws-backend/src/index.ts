@@ -1,4 +1,4 @@
-
+import "dotenv/config";
 import express from 'express';
 import http from 'http';
 import { WebSocket, WebSocketServer } from 'ws';
@@ -6,7 +6,7 @@ import { createRemoteJWKSet, jwtVerify } from 'jose';
 
 
 
-const PORT=8090
+const PORT=process.env.PORT || 3001
 
 const app = express();
 

@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "jwks" ADD COLUMN     "alg" TEXT NOT NULL DEFAULT 'EdDSA',
+ADD COLUMN     "crv" TEXT DEFAULT 'Ed25519';

@@ -1,9 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 import {AddCanvasData, DeleteRoom, JoinRoom, RoomInput } from "@repo/common/types";
-import { prisma } from "@repo/db/client";
 import { nanoid } from "nanoid";
-import { PrismaClient } from "../../../../packages/db/generated/prisma/client.js";
+import { prisma } from "@repo/db";
 const makeSlug = async (nanoId: string) => {
   const a =
     nanoId.slice(0, 3) + "-" + nanoId.slice(3, 6) + "-" + nanoId.slice(6, 9);
