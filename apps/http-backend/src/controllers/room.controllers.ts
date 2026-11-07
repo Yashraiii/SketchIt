@@ -133,7 +133,8 @@ const GetCanvasDataController = async(req:Request,res:Response)=>{
     try{
         const savedData = await getcanvasService(slug);
         return res.status(200).json({
-            message:"Data Fetched Successfully"
+            message:"Data Fetched Successfully",
+            data:savedData
         })
     }
     catch(error){
@@ -147,5 +148,6 @@ export{
     JoinRoomController,
     GetRoomsConttroller,
     DeleteRoomController,
-    GetCanvasDataController
+    GetCanvasDataController,
+    SaveCanvasDataController
 }

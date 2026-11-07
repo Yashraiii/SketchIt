@@ -1,8 +1,11 @@
 import express from "express";
-import { Request,Response } from "express";
+import cors from "cors";
 import { roomRoute } from "./routes/room.route.js";
 const PORT = process.env.PORT || 8080
 const app = express();
+
+app.use(cors());
+
 app.use(express.json())
 
 

@@ -129,14 +129,22 @@ const saveCanvasDataService  = async({roomId,userId,canvasData}:AddCanvasData)=>
         throw new Error("Something went wrong")
     }
 }
-const getcanvasService = async(workspaceId:string)=>{
+const  getcanvasService = async(slug:string)=>{
     try{
-        const canvasData = await prisma.canvas.findUnique({
+        const workSpace = await prisma.workspace.findUnique({
             where:{
-                id:workspaceId
+                slug:slug
             }
         })
-        return canvasData
+        const canvasData = await prisma.canvas.findUnique({
+            where:{
+                workspaceId:workSpace?.id || ""
+            },
+            select:{
+                data:true
+            }
+        })
+        return canvasData?.data
     }
     catch(error){
         throw new Error("Not able to fetch data")
