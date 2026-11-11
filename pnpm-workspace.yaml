@@ -4,5 +4,6 @@ packages:
 allowBuilds:
   '@prisma/client': true
   '@prisma/engines': true
+  '@tsparticles/engine': true
   esbuild: false
   prisma: true

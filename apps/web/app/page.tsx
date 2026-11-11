@@ -20,10 +20,12 @@ import {
   Server,
   Laptop,
 } from "lucide-react";
+import SparklesBackground from "@/components/sparklesCore";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-white selection:bg-indigo-500/30 flex flex-col font-sans overflow-x-hidden">
+    <SparklesBackground>
+      <div className="min-h-screen bg-transparent text-white selection:bg-indigo-500/30 flex flex-col font-sans overflow-x-hidden">
       {/* ── Top Navbar ── */}
       <nav className="sticky top-0 z-50 border-b border-white/8 bg-[#0a0a0c]/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -55,7 +57,7 @@ export default function LandingPage() {
 
             <Link
               href="/signup"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-all hover:scale-[1.02]"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gray-300 hover:bg-gray-50 text-black shadow-lg transition-all hover:scale-[1.02]"
             >
               <span>Get Started</span>
               <ArrowRight size={14} />
@@ -67,30 +69,21 @@ export default function LandingPage() {
       {/* ── Hero Section ── */}
       <main className="flex-1 max-w-7xl mx-auto px-6 pt-20 pb-28 flex flex-col items-center text-center">
         {/* Release / Announcement Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-8 backdrop-blur-md">
-          <Sparkles size={13} className="text-indigo-400" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-500/30 bg-gray-50 text-black text-xs font-medium mb-8 backdrop-blur-md">
+          <Sparkles size={13} className="text-black/400" />
           <span>Real-Time Collaborative Whiteboard</span>
-          <span className="h-1 w-1 rounded-full bg-indigo-400" />
-          <span className="text-neutral-400">Zero Setup Required</span>
+          <span className="h-1 w-1 rounded-full bg-black" />
         </div>
 
         {/* Main Hero Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-4xl text-transparent bg-clip-text bg-linear-to-b from-white via-neutral-100 to-neutral-400 leading-[1.1] mb-6">
-          Draw, diagram & collaborate <br className="hidden sm:inline" />
-          at the speed of thought.
+        <h1 className="text-4xl sm:text-4xl md:text-4xl font-extrabold tracking-tight max-w-4xl text-transparent bg-clip-text bg-linear-to-b from-white via-neutral-100 to-neutral-400 leading-[1.1] mb-6">
+          SketchIt is a collaborative whiteboard for effortless, <br className="hidden sm:inline" />hand-drawn diagrams.
         </h1>
-
-        {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mb-10 leading-relaxed font-normal">
-          An infinite virtual whiteboard for developers and product teams.
-          Sketch system architectures, wireframe user journeys, and sync live with your team in 60 FPS.
-        </p>
-
         {/* Hero CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-20">
           <Link
             href="/signup"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02] text-sm"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-black bg-gray-300 hover:bg-gray-50 shadow-xl transition-all hover:scale-[1.02] text-sm"
           >
             <span>Start Free Room</span>
             <ArrowRight size={16} />
@@ -98,7 +91,7 @@ export default function LandingPage() {
 
           <Link
             href="/canvas"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-neutral-300 hover:text-white border border-white/10 bg-white/4 hover:bg-white/8 transition-all text-sm"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-black hover:text-black border border-white/10 bg-gray-300 hover:bg-gray-50 transition-all text-sm"
           >
             <Pencil size={16} />
             <span>Open Solo Scratchpad</span>
@@ -213,96 +206,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* ── Bento Feature Grid ── */}
-        <div className="w-full max-w-5xl text-left mb-28">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-              Built for speed, clarity, and teams.
-            </h2>
-            <p className="text-neutral-400 text-base max-w-lg mx-auto">
-              Everything you need to turn vague thoughts into clear architecture diagrams and wireframes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Feature 1 */}
-            <div className="p-7 rounded-3xl border border-white/8 bg-[#121318]/80 backdrop-blur-xl hover:border-indigo-500/30 transition-all flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6 border border-indigo-500/20">
-                  <Zap size={22} />
-                </div>
-                <h3 className="font-bold text-lg mb-2 text-white">
-                  60 FPS In-Memory Sync
-                </h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">
-                  Real-time strokes stream directly between clients via Node.js WebSockets in memory,
-                  avoiding database read-locks while you draw.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="p-7 rounded-3xl border border-white/8 bg-[#121318]/80 backdrop-blur-xl hover:border-violet-500/30 transition-all flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-2xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-6 border border-violet-500/20">
-                  <Palette size={22} />
-                </div>
-                <h3 className="font-bold text-lg mb-2 text-white">
-                  Hand-Drawn Aesthetics
-                </h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">
-                  Natural sketchy strokes, customizable hachure fills, and clean geometry. Make diagrams that look polished yet approachable.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="p-7 rounded-3xl border border-white/8 bg-[#121318]/80 backdrop-blur-xl hover:border-emerald-500/30 transition-all flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 border border-emerald-500/20">
-                  <Shield size={22} />
-                </div>
-                <h3 className="font-bold text-lg mb-2 text-white">
-                  Decentralized Better-Auth
-                </h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">
-                  Stateless public-key JWT verification using JWKS cryptography. Secure sessions with zero database lookups on every socket ping.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 4: Persistent Workspaces */}
-            <div className="md:col-span-2 p-7 rounded-3xl border border-white/8 bg-[#121318]/80 backdrop-blur-xl hover:border-indigo-500/30 transition-all flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 border border-blue-500/20">
-                  <Layers size={22} />
-                </div>
-                <h3 className="font-bold text-lg mb-2 text-white">
-                  PostgreSQL Cloud Auto-Save
-                </h3>
-                <p className="text-sm text-neutral-400 leading-relaxed max-w-xl">
-                  Exit to your dashboard or close your browser without fear. Every shape is automatically serialized and saved to your workspace database with Prisma upserts.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 5: Shareable Rooms */}
-            <div className="p-7 rounded-3xl border border-white/8 bg-[#121318]/80 backdrop-blur-xl hover:border-indigo-500/30 transition-all flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 border border-amber-500/20">
-                  <Share2 size={22} />
-                </div>
-                <h3 className="font-bold text-lg mb-2 text-white">
-                  1-Click Invite Slugs
-                </h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">
-                  Generate simple 12-character slug links. Anyone with the code can jump directly into your canvas in seconds.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* ── Bottom Call To Action ── */}
         <div className="w-full max-w-5xl rounded-3xl border border-indigo-500/30 bg-linear-to-b from-indigo-950/40 to-[#121318] p-10 sm:p-16 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[radial-gradient(#6366f120_1px,transparent_1px)] bg-size-[16px_16px]" />
@@ -316,14 +219,14 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href="/signup"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02] text-sm"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-black bg-gray-300 hover:bg-gray-50 shadow-xl transition-all hover:scale-[1.02] text-sm"
               >
                 <span>Create Workspace</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/canvas"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-neutral-300 hover:text-white border border-white/10 bg-white/4 hover:bg-white/8 transition-all text-sm"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-black hover:text-black border border-white/10 bg-gray-300 hover:bg-gray-50 transition-all text-sm"
               >
                 <span>Try Solo First</span>
               </Link>
@@ -346,5 +249,6 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
+    </SparklesBackground>
   );
 }
